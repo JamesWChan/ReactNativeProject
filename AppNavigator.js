@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Home from './src/components/Home';
-import About from './src/components/About';
-import Metrics from './src/components/Metrics';
-import Contact from './src/components/Contact';
+import Home from './src/screens/Home';
+import About from './src/screens/About';
+import Metrics from './src/screens/Metrics';
+import Contact from './src/screens/Contact';
 
 const TabNavigator = createBottomTabNavigator({
     Home: {
