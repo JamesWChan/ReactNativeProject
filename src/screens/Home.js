@@ -38,12 +38,14 @@ export default class HomeScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         height: 500,
+        alignItems: 'center'
     },
     weatherContainer: {
         backgroundColor: '#BCE579',
         flex: 0.5,
         height: 50,
-        width: 50,
-        marginTop: 50
+        width: '60%',
+        marginTop: 50,
+        borderRadius: 100/2
     }
 });
