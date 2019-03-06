@@ -1,26 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import {Header, Divider} from 'react-native-elements';
+import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
+import AppHeader from '../components/AppHeader';
 import {databaseConfig} from '../config/DatabaseConfig';
+import ItemComponent from '../components/ItemComponent';
 
 let itemsRef = databaseConfig.ref('/items');
-
-
-
-/*export default class ListItem extends Component {
-
-    state = {
-        items: []
-    };
-
-    render() {
-        return (
-            <View>
-                <Text>Hello</Text>
-            </View>
-        )
-    }
-}*/
 
 export default class HomeScreen extends Component{
 
@@ -38,15 +22,19 @@ export default class HomeScreen extends Component{
 
     render(){
         return(
-            <ScrollView>
-                <Header
-                    centerComponent={{ text: 'X10 GREENER', style: { color: '#fff' } }}
-                />
+            <ScrollView styles={styles.homeScreen}>
+                <AppHeader/>
                 <Text>Home Screen</Text>
                 <View style={{backgroundColor: 'red', flex: 0.5, height: 200}}>
-                    <Text>{this.state.items[1]}</Text>
+                    <ItemComponent items={this.state.items} />
                 </View>
             </ScrollView>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    homeScreen: {
+        backgroundColor: 'grey'
+    }
+});

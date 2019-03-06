@@ -12,10 +12,9 @@ export default class App extends Component{
   }
 }*/
 
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
-import {Header, Divider} from 'react-native-elements';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Home from './src/screens/Home';
 import About from './src/screens/About';

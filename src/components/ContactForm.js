@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView, TextInput, Button, Alert} from 'react-native';
-import {Header, Divider} from 'react-native-elements';
+import AppHeader from '../components/AppHeader';
 import {databaseConfig} from '../config/DatabaseConfig'
 
 let addItem = item => {
@@ -35,9 +35,7 @@ export default class ContactForm extends Component{
     render(){
         return(
             <ScrollView>
-                <Header
-                    centerComponent={{ text: 'X10 GREENER', style: { color: '#fff' } }}
-                />
+                <AppHeader/>
                 <Text>Contact Screen</Text>
                 <Text>Enter something here:</Text>
                 <TextInput onChange={this.handleChange}/>
