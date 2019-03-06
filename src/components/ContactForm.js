@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView, TextInput, Button, Alert} from 'react-native';
 import AppHeader from '../components/AppHeader';
 import {databaseConfig} from '../config/DatabaseConfig'
+import LinearGradient from 'react-native-linear-gradient';
 
 let addItem = item => {
     databaseConfig.ref('/items').push({
@@ -36,11 +37,18 @@ export default class ContactForm extends Component{
         return(
             <ScrollView>
                 <AppHeader/>
-                <Text>Contact Screen</Text>
-                <Text>Enter something here:</Text>
-                <TextInput onChange={this.handleChange}/>
-                <Button title="submit" onPress={this.handleSubmit}>Submit</Button>
+                <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
+                    <Text>Enter something here:</Text>
+                    <TextInput onChange={this.handleChange}/>
+                    <Button title="submit" onPress={this.handleSubmit}>Submit</Button>
+                </LinearGradient>
             </ScrollView>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        height: 500,
+    }
+});

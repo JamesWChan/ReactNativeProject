@@ -6,8 +6,9 @@ export default class AppHeader extends Component{
         return(
             <Header
                 backgroundColor='#1E234C'
-                containerStyle={{ height: '20%' }}
-                centerComponent={{ text: '10xGREENER', style: { color: '#72E1A4', paddingBottom: '10%' }, font: 'Libre Franklin'}}
+                containerStyle={{ height: 50 }}
+                centerComponent={{ text: '10xGREENER', style: { color: '#72E1A4', paddingBottom: 20 } }}
+                rightComponent={{ text: '$', style: {color: '#F0AD3D', paddingBottom: 20, fontWeight: 'bold', fontSize: 20 } }}
             />
         )
     }

@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
 import AppHeader from '../components/AppHeader';
 import {databaseConfig} from '../config/DatabaseConfig';
 import ItemComponent from '../components/ItemComponent';
+import LinearGradient from 'react-native-linear-gradient';
 
 let itemsRef = databaseConfig.ref('/items');
 
@@ -22,19 +23,27 @@ export default class HomeScreen extends Component{
 
     render(){
         return(
-            <ScrollView styles={styles.homeScreen}>
+            <ScrollView>
                 <AppHeader/>
-                <Text>Home Screen</Text>
-                <View style={{backgroundColor: 'red', flex: 0.5, height: 200}}>
-                    <ItemComponent items={this.state.items} />
-                </View>
+                <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
+                    <View style={styles.weatherContainer}>
+                        <ItemComponent items={this.state.items} />
+                    </View>
+                </LinearGradient>
             </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    homeScreen: {
-        backgroundColor: 'grey'
+    container: {
+        height: 500,
+    },
+    weatherContainer: {
+        backgroundColor: '#BCE579',
+        flex: 0.5,
+        height: 50,
+        width: 50,
+        marginTop: 50
     }
 });
