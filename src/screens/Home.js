@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
 import AppHeader from '../components/AppHeader';
+import Recommendations from '../components/Recommendations';
 import {databaseConfig} from '../config/DatabaseConfig';
 import ItemComponent from '../components/ItemComponent';
 import LinearGradient from 'react-native-linear-gradient';
@@ -26,9 +27,13 @@ export default class HomeScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
+                    <Text style={{ color: '#fff' }}>Home</Text>
                     <View style={styles.weatherContainer}>
                         <ItemComponent items={this.state.items} />
                     </View>
+                    <Recommendations/>
+                    <Recommendations/>
+                    <Recommendations/>
                 </LinearGradient>
             </ScrollView>
         )
@@ -37,7 +42,7 @@ export default class HomeScreen extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        height: 500,
+        height: 600,
         alignItems: 'center'
     },
     weatherContainer: {

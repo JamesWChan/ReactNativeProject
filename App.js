@@ -17,7 +17,7 @@ import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Home from './src/screens/Home';
-import About from './src/screens/About';
+import Community from './src/screens/Community';
 import Metrics from './src/screens/Metrics';
 import Contact from './src/screens/Contact';
 
@@ -38,8 +38,8 @@ const TabNavigator = createBottomTabNavigator({
             )
         }
     },
-    About: {
-        screen: About,
+    Community: {
+        screen: Community,
         navigationOptions: {
             tabBarIcon: () => (
                 <FontAwesome name='info' size={30} color="#000" />

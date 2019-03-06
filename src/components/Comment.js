@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-export default class Recommendations extends Component{
+export default class Comment extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>Recommendation</Text>
+                <Text>Comment</Text>
                 <Text>Lorem ipsum</Text>
             </View>
         )

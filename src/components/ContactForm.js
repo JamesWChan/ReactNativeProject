@@ -1,28 +1,42 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, TextInput, Button, Alert} from 'react-native';
-import AppHeader from '../components/AppHeader';
+import {View, Text, StyleSheet, TextInput, Button, Alert} from 'react-native';
 import {databaseConfig} from '../config/DatabaseConfig'
-import LinearGradient from 'react-native-linear-gradient';
 
-let addItem = item => {
+let addItem = (name, email, message) => {
     databaseConfig.ref('/items').push({
-        name: item
+        name: name,
+        email: email,
+        message: message
     });
 };
 
 export default class ContactForm extends Component{
     state = {
-        name: ''
+        name: '',
+        email: '',
+        message: ''
     };
 
-    handleChange = e => {
+    handleNameChange = e => {
         this.setState({
             name: e.nativeEvent.text
         });
     };
 
+    handleEmailChange = e => {
+        this.setState({
+            email: e.nativeEvent.text
+        });
+    };
+
+    handleMessageChange = e => {
+        this.setState({
+            message: e.nativeEvent.text
+        });
+    };
+
     handleSubmit = e => {
-        addItem(this.state.name);
+        addItem(this.state.name, this.state.email, this.state.message);
         Alert.alert(
             'Message submitted ',
             'Thanks for your feedback.',
@@ -35,14 +49,13 @@ export default class ContactForm extends Component{
 
     render(){
         return(
-            <ScrollView>
-                <AppHeader/>
-                <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <Text>Enter something here:</Text>
-                    <TextInput onChange={this.handleChange}/>
-                    <Button title="submit" onPress={this.handleSubmit}>Submit</Button>
-                </LinearGradient>
-            </ScrollView>
+            <View style={styles.container}>
+                <Text style={{ color: '#fff' }}>Contact Us</Text>
+                <TextInput placeholder="Name" style={styles.inputContainer} onChange={this.handleNameChange}/>
+                <TextInput placeholder="Email" style={styles.inputContainer} onChange={this.handleEmailChange}/>
+                <TextInput placeholder="Enter your message here" style={styles.inputContainer} onChange={this.handleMessageChange}/>
+                <Button title="submit" style={styles.button} onPress={this.handleSubmit}>Submit</Button>
+            </View>
         )
     }
 }
@@ -50,5 +63,15 @@ export default class ContactForm extends Component{
 const styles = StyleSheet.create({
     container: {
         height: 500,
+        alignItems: 'center'
+    },
+    inputContainer: {
+        backgroundColor: '#fff',
+        width: '80%',
+        height: 50,
+        marginTop: 30
+    },
+    button: {
+        marginTop: 30
     }
 });
