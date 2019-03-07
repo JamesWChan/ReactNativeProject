@@ -9,7 +9,7 @@ export default class MetricsScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <View style={{backgroundColor: 'green', flex: 0.5, height: 200}}>
+                    <View style={{backgroundColor: 'green', height: 100, width: '80%'}}>
                         <Text>Put graph here</Text>
                     </View>
                 </LinearGradient>
@@ -20,6 +20,7 @@ export default class MetricsScreen extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        height: 500,
+        height: 600,
+        alignItems: 'center'
     }
 });

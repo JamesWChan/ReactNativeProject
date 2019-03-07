@@ -4,6 +4,8 @@ import AppHeader from '../components/AppHeader';
 import LinearGradient from 'react-native-linear-gradient';
 import Comment from '../components/Comment';
 import Post from '../components/Post';
+import DividerLine from "../components/DividerLine";
+
 
 export default class CommunityScreen extends Component{
     render(){
@@ -11,11 +13,12 @@ export default class CommunityScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <Text style={{ color: '#fff' }}>Community Feed</Text>
-                    <View>
-                        <Comment/>
-                        <Post/>
-                    </View>
+                    <Text style={styles.pageTitle}>── Community Feed ──</Text>
+                    <Comment/>
+                    <DividerLine/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
                 </LinearGradient>
             </ScrollView>
         )
@@ -24,7 +27,12 @@ export default class CommunityScreen extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        height: 500,
+        height: 600,
         alignItems: 'center'
+    },
+    pageTitle: {
+        color: '#fff',
+        fontSize: 26,
+        marginTop: '5%'
     }
 });

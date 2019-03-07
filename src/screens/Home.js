@@ -5,6 +5,7 @@ import Recommendations from '../components/Recommendations';
 import {databaseConfig} from '../config/DatabaseConfig';
 import ItemComponent from '../components/ItemComponent';
 import LinearGradient from 'react-native-linear-gradient';
+import DividerLine from "../components/DividerLine";
 
 let itemsRef = databaseConfig.ref('/items');
 
@@ -27,10 +28,11 @@ export default class HomeScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <Text style={{ color: '#fff' }}>Home</Text>
+                    <Text style={styles.pageTitle}>── Home ──</Text>
                     <View style={styles.weatherContainer}>
                         <ItemComponent items={this.state.items} />
                     </View>
+                    <DividerLine/>
                     <Recommendations/>
                     <Recommendations/>
                     <Recommendations/>
@@ -47,10 +49,14 @@ const styles = StyleSheet.create({
     },
     weatherContainer: {
         backgroundColor: '#BCE579',
-        flex: 0.5,
-        height: 50,
+        height: '25%',
         width: '60%',
-        marginTop: 50,
+        marginTop: 30,
         borderRadius: 100/2
-    }
+    },
+    pageTitle: {
+        color: '#fff',
+        fontSize: 26,
+        marginTop: '5%'
+    },
 });

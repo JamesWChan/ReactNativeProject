@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 export default class Recommendations extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>Recommendation</Text>
-                <Text>Lorem ipsum</Text>
+                <View style={styles.textbox}>
+                    <Text style={{fontWeight: 'bold', color: '#272727'}}>Recommendation</Text>
+                    <Text style={{color: '#797979'}}>Lorem ipsum</Text>
+                </View>
             </View>
         )
     }
@@ -14,9 +16,12 @@ export default class Recommendations extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F8D765',
+        backgroundColor: '#BCE579',
         width: '80%',
         marginTop: 30,
         borderRadius: 5
+    },
+    textbox: {
+        padding: '5%'
     }
 });

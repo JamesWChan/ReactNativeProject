@@ -32,6 +32,7 @@ export default class ContactForm extends Component{
     handleMessageChange = e => {
         this.setState({
             message: e.nativeEvent.text
+
         });
     };
 
@@ -50,7 +51,7 @@ export default class ContactForm extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text style={{ color: '#fff' }}>Contact Us</Text>
+                <Text style={styles.pageTitle}>── Contact Us ──</Text>
                 <TextInput placeholder="Name" style={styles.inputContainer} onChange={this.handleNameChange}/>
                 <TextInput placeholder="Email" style={styles.inputContainer} onChange={this.handleEmailChange}/>
                 <TextInput placeholder="Enter your message here" style={styles.inputContainer} onChange={this.handleMessageChange}/>
@@ -71,7 +72,12 @@ const styles = StyleSheet.create({
         height: 50,
         marginTop: 30
     },
+    pageTitle: {
+        color: '#fff',
+        fontSize: 26,
+        marginTop: '5%'
+    },
     button: {
-        marginTop: 30
+        marginTop: '5%'
     }
 });

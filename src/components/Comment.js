@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import DividerLine from './DividerLine';
 
 export default class Comment extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>Comment</Text>
-                <Text>Lorem ipsum</Text>
+                <View style={styles.textbox}>
+                    <Text style={{fontWeight: 'bold', color: '#272727'}}>Tell the community something</Text>
+                    <Text style={{color: '#797979'}}>Write something...</Text>
+                </View>
             </View>
         )
     }
@@ -14,9 +17,12 @@ export default class Comment extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F8D765',
+        backgroundColor: '#fff',
         width: '80%',
         marginTop: 30,
         borderRadius: 5
+    },
+    textbox: {
+        padding: '5%'
     }
 });

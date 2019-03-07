@@ -30,14 +30,6 @@ const TabNavigator = createBottomTabNavigator({
             )
         }
     },
-    Metrics: {
-        screen: Metrics,
-        navigationOptions: {
-            tabBarIcon: () => (
-                <FontAwesome name='sliders' size={30} color="#000" />
-            )
-        }
-    },
     Community: {
         screen: Community,
         navigationOptions: {
