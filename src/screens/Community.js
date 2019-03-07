@@ -13,7 +13,7 @@ export default class CommunityScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <Text style={styles.pageTitle}>── Community Feed ──</Text>
+                    <Text accessibilityRole={"text"} style={styles.pageTitle}>── Community Feed ──</Text>
                     <Comment/>
                     <DividerLine/>
                     <Post/>

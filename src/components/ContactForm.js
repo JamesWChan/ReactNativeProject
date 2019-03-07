@@ -39,7 +39,7 @@ export default class ContactForm extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text style={styles.pageTitle}>── Contact Us ──</Text>
+                <Text accessibilityRole={"text"} style={styles.pageTitle}>── Contact Us ──</Text>
                 <TextInput
                     accessible={true}
                     accessibilityLabel={"Name input field"}

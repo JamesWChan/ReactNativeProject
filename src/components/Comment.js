@@ -7,8 +7,8 @@ export default class Comment extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.textbox}>
-                    <Text style={{fontWeight: 'bold', color: '#272727'}}>Tell the community something</Text>
-                    <Text style={{color: '#797979'}}>Write something...</Text>
+                    <Text accessibilityRole={"text"} style={{fontWeight: 'bold', color: '#272727'}}>Tell the community something</Text>
+                    <Text accessibilityRole={"text"} style={{color: '#797979'}}>Write something...</Text>
                 </View>
             </View>
         )

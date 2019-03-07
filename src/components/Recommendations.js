@@ -6,8 +6,8 @@ export default class Recommendations extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.textbox}>
-                    <Text style={{fontWeight: 'bold', color: '#272727'}}>Recommendation</Text>
-                    <Text style={{color: '#797979'}}>Lorem ipsum</Text>
+                    <Text accessibilityRole={"text"} style={{fontWeight: 'bold', color: '#272727'}}>Recommendation</Text>
+                    <Text accessibilityRole={"text"} style={{color: '#797979'}}>Lorem ipsum</Text>
                 </View>
             </View>
         )

@@ -29,7 +29,7 @@ export default class HomeScreen extends Component{
             <ScrollView>
                 <AppHeader/>
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
-                    <Text style={styles.pageTitle}>── Home ──</Text>
+                    <Text accessibilityRole={"text"} style={styles.pageTitle}>── Home ──</Text>
                     <View style={styles.weatherContainer}>
                         <ItemComponent items={this.state.items} />
                     </View>

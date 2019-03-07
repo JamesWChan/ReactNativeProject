@@ -13,7 +13,7 @@ export default class ItemComponent extends Component {
                 {this.props.items.map((item, index) => {
                     return (
                         <View key={index}>
-                            <Text style={styles.itemtext}>{item.greeting}</Text>
+                            <Text accessibilityRole={"text"} style={styles.itemtext}>{item.greeting}</Text>
                         </View>
                     );
                 })}

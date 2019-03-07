@@ -7,8 +7,8 @@ export default class Post extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.textbox}>
-                    <Text style={{fontWeight: 'bold', color: '#272727'}}>Name</Text>
-                    <Text style={{color: '#797979'}}>Comments from users will be displayed here...</Text>
+                    <Text accessibilityRole={"text"} style={{fontWeight: 'bold', color: '#272727'}}>Name</Text>
+                    <Text accessibilityRole={"text"} style={{color: '#797979'}}>Comments from users will be displayed here...</Text>
                 </View>
             </View>
         )
