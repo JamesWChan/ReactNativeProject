@@ -12,3 +12,14 @@ let config = {
 let app = Firebase.initializeApp(config);
 
 export const databaseConfig = app.database();
+
+
+
+
+/*
+apiKey: "AIzaSyDpnf4MCzOydo4gdXEtVo0wERkoaDTKeo0",
+    authDomain: "greener-36d37.firebaseapp.com",
+    databaseURL: "https://greener-36d37.firebaseio.com",
+    projectId: "greener-36d37",
+    storageBucket: "greener-36d37.appspot.com",
+    messagingSenderId: "20968655330"*/

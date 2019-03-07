@@ -7,7 +7,8 @@ import ItemComponent from '../components/ItemComponent';
 import LinearGradient from 'react-native-linear-gradient';
 import DividerLine from "../components/DividerLine";
 
-let itemsRef = databaseConfig.ref('/items');
+//let itemsRef = databaseConfig.ref('/items');
+let randomStuffRef = databaseConfig.ref('/randomStuff');
 
 export default class HomeScreen extends Component{
 
@@ -16,7 +17,7 @@ export default class HomeScreen extends Component{
     };
 
     componentDidMount() {
-        itemsRef.on('value', snapshot => {
+        randomStuffRef.on('value', snapshot => {
             let data = snapshot.val();
             let items = Object.values(data);
             this.setState({ items });
