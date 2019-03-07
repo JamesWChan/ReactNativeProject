@@ -6,6 +6,9 @@ export default class AppHeader extends Component{
     render(){
         return(
             <Header
+                accessible={true}
+                accessibilityLabel={"Main app header"}
+                accessibilityRole={"header"}
                 backgroundColor='#1E234C'
                 containerStyle={{ height: 50 }}
                 centerComponent={{ text: '10xGREENER', style: { color: '#72E1A4', paddingBottom: 20, fontSize: 26, fontWeight: 'bold' } }}
