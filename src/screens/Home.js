@@ -8,7 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import DividerLine from "../components/DividerLine";
 
 //let itemsRef = databaseConfig.ref('/items');
-let randomStuffRef = databaseConfig.ref('/randomStuff');
+let latestRef = databaseConfig.ref('/latest');
 
 export default class HomeScreen extends Component{
 
@@ -17,7 +17,7 @@ export default class HomeScreen extends Component{
     };
 
     componentDidMount() {
-        randomStuffRef.on('value', snapshot => {
+        latestRef.on('value', snapshot => {
             let data = snapshot.val();
             let items = Object.values(data);
             this.setState({ items });
@@ -31,7 +31,8 @@ export default class HomeScreen extends Component{
                 <LinearGradient style={styles.container} colors={['#4c669f', '#3b5998', '#192f6a']}>
                     <Text accessibilityRole={"text"} style={styles.pageTitle}>── Home ──</Text>
                     <View style={styles.weatherContainer}>
-                        <ItemComponent items={this.state.items} />
+                        <Text accessibilityRole={"text"} style={{paddingTop: '15%', fontSize: 20, textAlign: 'center'}}>Current Carbon Monoxide level:</Text>
+                        <ItemComponent style={{ marginTop: '10%'}} items={this.state.items} />
                     </View>
                     <DividerLine/>
                     <Recommendations/>
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     weatherContainer: {
+        alignItems: 'center',
         backgroundColor: '#BCE579',
         height: '25%',
         width: '60%',
