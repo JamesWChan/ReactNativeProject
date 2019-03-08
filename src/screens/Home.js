@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, Linking} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import AppHeader from '../components/AppHeader';
 import Recommendations from '../components/Recommendations';
 import {databaseConfig} from '../config/DatabaseConfig';
@@ -7,7 +7,6 @@ import ItemComponent from '../components/ItemComponent';
 import LinearGradient from 'react-native-linear-gradient';
 import DividerLine from "../components/DividerLine";
 
-//let itemsRef = databaseConfig.ref('/items');
 let latestRef = databaseConfig.ref('/latest');
 
 export default class HomeScreen extends Component{
